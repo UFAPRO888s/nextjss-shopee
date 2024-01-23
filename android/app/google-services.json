@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "300492131280",
+    "firebase_url": "https://liveinfinite-57d93-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "liveinfinite-57d93",
+    "storage_bucket": "liveinfinite-57d93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300492131280:android:731c61fe572915a93747d5",
+        "android_client_info": {
+          "package_name": "com.pnckdevapp.liveinfinite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJn_OFZcY9lua2xvC_Egn7_qvvLpaMZtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

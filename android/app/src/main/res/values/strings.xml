@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">liveinfinite</string>
+    <string name="title_activity_main">liveinfinite</string>
+    <string name="package_name">com.pnckdevapp.liveinfinite</string>
+    <string name="custom_url_scheme">com.pnckdevapp.liveinfinite</string>
+</resources>
