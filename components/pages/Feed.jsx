@@ -65,6 +65,8 @@ const Feed = () => {
   // const homeItems = Store.useState(getHomeItems);
   const [showNotifications, setShowNotifications] = useState(false);
   const [lidata, setlidata] = useState();
+  const [lidatahls, setlidatahls] = useState();
+  
   useEffect(() => {
     (async () => {
       const aac = await getToken()
@@ -81,9 +83,36 @@ const Feed = () => {
         referrerPolicy: "no-referrer",
       });
       const sllls = await response.json()
-      // console.log(sllls)
+       console.log(sllls)
       const mxas = await sllls.ffmpeg.map((iyys) => {
-        
+        return {
+          "session_id": iyys['id'],
+          "uid": iyys['reference'],
+          "username": iyys['reference'],
+          "real_username": iyys['reference'],
+          "avatar": "th-11134233-7r98s-lm1mun684hs734",
+          "nick_name": "Rich 1688 shop",
+          "room_id": iyys['reference'],
+          "title": "มาแล้วจ้าาาา",
+          "cover_pic": "th-11134104-7r98z-lonxkxpzdxkia5",
+          "shop_id": 1022624031,
+          "start_time": 1705942013522,
+          "play_url": "https://play-spe.livestream.shopee.co.th/live/th-live-2489357761975296-5977478_spehqld.flv?auditkey=1.0~giDEQVN1snSKYKVH02fxsiLUmm0w0Ir7OkxUCKNaOJ7OAK71cVe4ZKz6zE6zoo0GcddQ0u39eZUANjDhGaOGdg~d713e63332b9e34eb5521a931f3f15093d033bf88d75ee3ab819069551d86f7f&cdnID=SHOPEE&expire_ts=1705960318&tcLevel=rank_2830%2Cnormal",
+          "status": 1,
+          "ccu": 14,
+          "subtitle": "",
+          "score_debug_info": "null",
+          "share_url": "https://live.shopee.co.th/share?from=live&session=5977478",
+          "endpage_url": "https://live.shopee.co.th/live-end",
+          "has_voucher": true,
+          "origin_title": "มาแล้วจ้าาาา",
+          "has_streaming_price": false,
+          "has_draw": false,
+          "cover_exp_type": 0,
+          "is_seller": true
+        }
+      })
+      const mxashl = await sllls.hls.map((iyys) => {
         return {
           "session_id": iyys['id'],
           "uid": iyys['reference'],
@@ -113,9 +142,10 @@ const Feed = () => {
       })
       if (!mxas) { return }
       setlidata(mxas)
+      setlidatahls(mxashl)
     })();
   }, []);
-  // console.log(lidata)
+  console.log(lidata)
   return (
     <IonPage>
       {/* <IonHeader>
@@ -140,6 +170,9 @@ const Feed = () => {
         <Notifications open={showNotifications} onDidDismiss={() => setShowNotifications(false)} />
         <div className='grid grid-cols-2 gap-1'>
           {lidata && lidata.map((i, index) => (
+            <FeedCard {...i} key={index} />
+          ))}
+          {lidatahls && lidatahls.map((i, index) => (
             <FeedCard {...i} key={index} />
           ))}
         </div>

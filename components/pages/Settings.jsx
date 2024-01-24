@@ -10,6 +10,7 @@ import { call, happyOutline, linkOutline, options, sendOutline, videocam } from 
 import PublishingComponent from '../ui/LiveRtmp';
 import Publish from '../ui/Media';
 
+
 async function getToken() {
   const response = await fetch('https://liveinfinite.ulivestar.com/api/login', {
     method: "POST",
@@ -125,7 +126,7 @@ const Settings = () => {
       setImage(result);
     }
   };
-  
+
   // rtmp({options: {host:""}}) => {
 
   // }
@@ -180,11 +181,13 @@ const Settings = () => {
           <IonButton onClick={handleStartRTMP}>start</IonButton>
         </div> */}
         <div className='w-full'>
-        {/* <PublishingComponent /> */}
-        <Publish /> 
-        {/* userSocket={userSocket} */}
+           {/* <PublishingComponent />  */}
+          <Publish />
+          {/* userSocket={userSocket} */}
         </div>
-        
+        <div>
+       
+        </div>
       </IonContent>
     </IonPage>
   );
